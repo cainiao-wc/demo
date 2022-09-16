@@ -20,14 +20,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WelcomeController {
 
-    @Autowired
-    private DataProcessCron dataProcessCron;
 
     @ApiOperation(value = "欢迎语")
     @GetMapping(value = "/hello")
     public String hello() {
-//        dataProcessCron.executeTask();
-        System.out.println(dataProcessCron.judgeDate());
         return "hello world";
     }
 }
