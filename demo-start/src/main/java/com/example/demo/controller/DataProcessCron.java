@@ -38,10 +38,10 @@ public class DataProcessCron implements Runnable {
         new Thread(this).start();
     }
 
-    private boolean isWorkDay = false;
-    private boolean hasSend = false;
+    private static boolean isWorkDay = false;
+    private static boolean hasSend = false;
 
-    public static int COUNT_DAY = 82;
+    public static int COUNT_DAY = 81;
 
 
     @Override
@@ -78,12 +78,12 @@ public class DataProcessCron implements Runnable {
         Calendar calendar = Calendar.getInstance();
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         if(hour == 1) {
-            isWorkDay = equals(judgeDate());
+            isWorkDay = "0".equals(judgeDate());
             hasSend = false;
         }
         if (isWorkDay) {
             int minute = calendar.get(Calendar.MINUTE);
-            if(hour == 9 && minute == 30) {
+            if(hour == 12 && minute == 10) {
                 return true;
             }
         } else {
