@@ -1,10 +1,10 @@
 package com.example.demo.controller;
 
 
+import com.example.demo.service.entity.common.resp.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,7 +23,7 @@ public class WelcomeController {
 
     @ApiOperation(value = "欢迎语")
     @GetMapping(value = "/hello")
-    public String hello() {
-        return "hello world";
+    public Result<String> hello() {
+        return Result.success("hello world");
     }
 }
