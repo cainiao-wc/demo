@@ -1,0 +1,20 @@
+#-------------------------------------------------------
+# PROD环境配置区域
+#-------------------------------------------------------
+# 重要说明
+# 此配置区域仅在PROD环境中生效，只能定义测试环境中默认且长期不变
+# 的配置项，例如生产环境中的通用超时时间等，外部资源如数据库连接
+#-------------------------------------------------------
+
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: ''
+    # 连接超时时间
+    timeout: 3000
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root

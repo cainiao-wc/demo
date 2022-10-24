@@ -6,7 +6,8 @@
 	<modules>
 		<module>demo-start</module>
 		<module>demo-service</module>
-	</modules>
+        <module>demo-dao</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
